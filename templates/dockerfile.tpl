@@ -11,7 +11,7 @@ WORKDIR /var/www/html
 RUN apk update && apk add --no-cache \
     build-base shadow vim curl autoconf make gnupg g++ zlib libzip-dev \
     libpng-dev libjpeg-turbo-dev libwebp-dev libxpm-dev zlib-dev \
-    openssl-dev oniguruma-dev \
+    openssl-dev oniguruma-dev linux-headers \
     icu-dev bzip2-dev freetype freetype-dev \
     freetds freetds-dev
 
