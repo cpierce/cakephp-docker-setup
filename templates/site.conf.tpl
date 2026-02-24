@@ -7,21 +7,6 @@ server {
 }
 
 server {
-    listen 1080 ssl http2;
-    server_name {{HOSTNAME}};
-
-    ssl_certificate /etc/ssl/certs/{{HOSTNAME}}.pem;
-    ssl_certificate_key /etc/ssl/private/{{HOSTNAME}}-key.pem;
-
-    location / {
-        proxy_pass http://{{PROJECT_NAME}}-mailcatcher:1080;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}
-server {
     listen 443 ssl http2;
     server_name {{HOSTNAME}};
 

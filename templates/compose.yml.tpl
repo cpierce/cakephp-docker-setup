@@ -25,8 +25,8 @@ services:
     restart: unless-stopped
     tty: true
     ports:
+      - "80:80"
       - "443:443"
-      - "1080:1080"
     volumes:
       - ./:/var/www/html
       - ./config/docker/conf.d/:/etc/nginx/conf.d/
@@ -64,6 +64,7 @@ services:
     image: chrislpierce/mailcatcher:latest
     ports:
       - "1025:1025"
+      - "1080:1080"
     networks:
       - dev
 
